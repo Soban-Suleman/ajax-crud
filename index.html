@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body class="container">
+    <h1>API PRODUCTS</h1>
+
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary btn-lg"
+      data-toggle="modal"
+      data-target="#addModal"
+    >
+      Add product
+    </button>
+
+    <!-- Modal Add -->
+    <div
+      class="modal fade"
+      id="addModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">ADD Product</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="name"
+                aria-describedby="helpId"
+                placeholder="Name Of Recipe"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Name of Recipe</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                name="price"
+                id="price"
+                aria-describedby="helpId"
+                placeholder="Price Of Recipe"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter price of Recipe</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="department">Department</label>
+              <input
+                type="text"
+                class="form-control"
+                name="department"
+                id="department"
+                aria-describedby="helpId"
+                placeholder="Enter Department"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Department Name</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input
+                type="text"
+                class="form-control"
+                name="color"
+                id="color"
+                aria-describedby="helpId"
+                placeholder="Color"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Color</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="description">Description of Product</label>
+              <input
+                type="text"
+                class="form-control"
+                name="description"
+                id="description"
+                aria-describedby="helpId"
+                placeholder="Description"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Description</small
+              >
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="addBtn" class="btn btn-info">Add product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Update  -->
+    <div
+      class="modal fade"
+      id="updateModel"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modelTitleId"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="">ID</label>
+              <input
+                disabled
+                class="form-control"
+                name="updateID"
+                id="updateID"
+                aria-describedby="helpId"
+                placeholder="ID"
+              />
+            </div>
+            <div class="form-group">
+              <label for="">Update Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="updateName"
+                aria-describedby="helpId"
+                placeholder="Name Of Recipe"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Name of Recipe</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="">Price</label>
+              <input
+                type="text"
+                class="form-control"
+                name="price"
+                id="updatePrice"
+                aria-describedby="helpId"
+                placeholder="Price Of Recipe"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter price of Recipe</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="department">Department</label>
+              <input
+                type="text"
+                class="form-control"
+                name="department"
+                id="updateDepartment"
+                aria-describedby="helpId"
+                placeholder="Enter Department"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Department Name</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="color">Color</label>
+              <input
+                type="text"
+                class="form-control"
+                name="color"
+                id="updateColor"
+                aria-describedby="helpId"
+                placeholder="Color"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Color</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="description">Description of Product</label>
+              <input
+                type="text"
+                class="form-control"
+                name="description"
+                id="updateDescription"
+                aria-describedby="helpId"
+                placeholder="Description"
+              />
+              <small id="helpId" class="form-text text-muted"
+                >Enter Description</small
+              >
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="updateRecipe" class="btn btn-primary">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="recipes">Loading ....</div>
+  </body>
+</html>
